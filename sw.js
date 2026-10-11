@@ -1,4 +1,4 @@
-const CACHE_NAME = 'little-days-pwa-v3-public-rtdb';
+const CACHE_NAME = 'little-days-pwa-v5-clean-header';
 const APP_SHELL = [
   './',
   './index.html',

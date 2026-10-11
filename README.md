@@ -1,20 +1,20 @@
-# Little Days PWA — Firebase Realtime Database (no sign-in)
+# Little Days — Baby Tracker PWA
 
-A mobile-first baby growth tracker and memory journal, installable on iPhone/iPad and Android. The app uses the configured Firebase Realtime Database directly without Firebase Authentication. Every install points to the same cloud record.
+A gentle, mobile-first baby growth tracker, milestone checklist, and memory journal. The app source and UI are contained in `index.html`; the manifest, service worker, and icons are the small support files required for an installable Progressive Web App. It is ready for static hosting on GitHub Pages and supports iOS Safari and Android Chrome.
 
 ## Included
-- Baby profile, age display, pastel themes, growth measurements and chart
-- Milestone checklist and custom milestones
-- Journal entries with optional profile/journal photos and voice recordings
-- Local browser storage for offline use, plus JSON export/import backup
-- Automatic cloud save after edits once the app has connected and a cloud/local copy choice has been made
-- iOS/Android PWA manifest, icons, service worker and mobile layout
 
-## Important: this database path is public
-You asked for no sign-in and no database security. To make unauthenticated writes work, the Realtime Database rules below grant public read/write access to the `littleDaysBabyTracker` path. **Anyone who knows the project/database URL may read, overwrite, or delete the Little Days cloud record.** This includes baby profile details, measurements, milestone history, journal text, and any media embedded in the record. Do not use this setup for private information. Public rules can also be abused and may consume your Firebase quota.
+- Live baby age counter, profile picture, and five pastel themes
+- Growth log with weight/height chart and historical measurement deletion
+- Developmental milestones across Motor Skills, Language / Communication, Social / Emotional, and Cognitive, plus custom milestones
+- Journal memories with text, compressed photos, and voice recordings with a live waveform and playback preview
+- Firebase Realtime Database synchronization without sign-in; data changes sync automatically and remote changes are applied in real time
+- Local-device storage for offline use, plus JSON backup export/import and demo data
+- PWA manifest, service worker shell caching, safe-area support, mobile bottom navigation, and install guidance for iOS/Android
 
-## 1. Set Firebase Realtime Database rules
-Open Firebase Console → **Realtime Database → Rules**. Add the `littleDaysBabyTracker` child to your existing `rules` object. Do not blindly replace unrelated rules if this Firebase project is already used by another app. Merge the block below into the existing rules JSON, keeping other app paths unchanged. If the path already exists, merge/adjust that path rather than duplicating it. Publish the rules.
+## Firebase setup (one time)
+
+The app uses the Firebase project configured in `index.html` and writes to `/littleDaysBabyTracker/state`. No Firebase Authentication is used. In Firebase Console, open **Realtime Database → Rules** and add the `littleDaysBabyTracker` child inside your existing rules object. Do not remove other rules if the project is shared with another app. Merge this block into the existing `rules` object, then publish:
 
 ```json
 {
@@ -27,26 +27,31 @@ Open Firebase Console → **Realtime Database → Rules**. Add the `littleDaysBa
 }
 ```
 
-The app writes to `/littleDaysBabyTracker/state`. The rule makes that path and its children readable and writable without authentication. Avoid setting public read/write at the database root if other applications share this Firebase project. Existing parent-level rules may already expose other data; review the complete rules before publishing.
+The example above shows the complete shape for a dedicated database rules file; if other apps use the same database, retain their existing rule entries and add the `littleDaysBabyTracker` block alongside them.
 
-## 2. Run or deploy
-For PWA installation, serve the files over `localhost` or HTTPS; opening `index.html` with `file://` will not enable service workers.
+**Privacy warning:** public read/write rules mean anyone who knows the Firebase project/database endpoint may read, overwrite, or delete this path. Baby profile details, growth records, milestone history, journal text, photos, and audio are included. This is intentionally configured for no sign-in, but it is not private or access-controlled. Public access can also be abused and consume Firebase quota.
+
+## Automatic conflict handling
+
+- There are no manual cloud save/load buttons in the app. Local changes are saved to browser storage immediately and automatically queued for Firebase when connected.
+- At startup, the app compares local and cloud update timestamps. The newer record wins; if timestamps match, the writer ID provides a deterministic tie-break. This is last-write-wins, not a field-by-field merge.
+- While the app is open on multiple devices, realtime database events automatically update a device when another device has a newer record. Avoid editing the same record on multiple devices at exactly the same time; a later full-record update can replace earlier edits.
+- Each cloud save is limited to 8 MB. Images are resized/compressed before storage, but large voice clips can still exceed the limit. In that case the app keeps the local copy and shows a small status indicator. Export a JSON backup periodically.
+- Data is stored in one shared record for all installations. Anyone using the URL/project and permissive rules sees the same baby record.
+
+## Deploy to GitHub Pages
+
+1. Extract this ZIP. Keep `index.html`, `manifest.webmanifest`, `sw.js`, and the `icons/` folder together.
+2. Upload/commit all files to the root of a GitHub repository.
+3. In GitHub, open **Settings → Pages**, select the branch and `/ (root)` folder, and save.
+4. Open the published HTTPS URL. To install on iPhone/iPad, open the site in Safari, tap **Share → Add to Home Screen**. On Android, open in Chrome and choose **Install app** or **Add to Home screen**.
+
+For local testing, serve this directory over localhost rather than opening `index.html` through `file://`:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000` for local testing. For use on a phone, deploy the **entire folder** to an HTTPS static host and keep `index.html`, `manifest.webmanifest`, `sw.js`, and `icons/` together.
+Open `http://localhost:8000`. Service workers and installability require HTTPS or localhost. The Chart.js library and Firebase SDK are loaded from their official CDN URLs, so charting and cloud sync require internet access; basic state editing uses local storage when offline.
 
-## 3. How cloud saving works
-- When a valid cloud record exists and this device has no meaningful local data, the app restores the cloud record automatically.
-- If both cloud and local records contain data, the app asks you to choose **Load cloud data** (replace this device's local data) or **Save this device to cloud** (replace the shared cloud record).
-- After choosing, app edits automatically save to the shared record when online. While offline, the local copy continues to work and edits stay on the device until a later save succeeds.
-- All devices share one record; this is not multi-user collaboration or a merge system. Avoid editing on multiple devices at the same time.
-- The app stops a single cloud save if serialized data exceeds 8 MB. Remove large media clips or photos and try again. Local data is not removed when a cloud save fails.
-- Use **Backup** to export a JSON file before replacing cloud or local data.
-
-## Notes
-- No Firebase Authentication or Firebase Storage is used; profile images and journal audio/photos are stored in the app state record, so larger media can grow the record quickly.
-- Chart.js is loaded from a CDN, so chart rendering may need an internet connection even when the app shell is installed.
-- If rules deny access, check that the `littleDaysBabyTracker` rule is published and that you used the right Firebase project.
+The top header is intentionally hidden for a cleaner mobile-first view. Demo data, backup, and import are grouped under the collapsed **More tools** section; the install button appears when supported.

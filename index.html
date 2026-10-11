@@ -16,9 +16,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--accent:#d982a3;--accent2:#f4c9d8;--ink:#3d3540;--muted:#827985;--paper:#fffdfd;--bg:#fbf6f8;--line:#f0e6eb;--soft:#fff0f5;--shadow:0 10px 30px #4c26300c}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #d982a355;outline-offset:2px}.app{max-width:1180px;margin:auto;padding:22px 18px 60px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:1.2rem;letter-spacing:-.04em}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:var(--soft);font-size:23px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:10px 14px;background:var(--accent);color:white;font-weight:750;box-shadow:0 5px 15px #00000008}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.subtle{background:var(--soft);color:var(--ink);box-shadow:none}.btn.small{font-size:.85rem;padding:7px 10px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:22px;padding:28px;border-radius:28px;background:linear-gradient(120deg,var(--soft),#fff 75%);border:1px solid #ffffff;box-shadow:var(--shadow);margin-bottom:22px}.hero-main{display:flex;align-items:center;gap:20px;min-width:0}.avatar-wrap{position:relative;flex-shrink:0}.avatar{width:112px;height:112px;object-fit:cover;border-radius:32px;background:#fff;border:4px solid #ffffff;box-shadow:0 5px 18px #4c263018}.avatar-edit{position:absolute;right:-5px;bottom:-5px;border:2px solid white;background:var(--accent);color:#fff;border-radius:50%;width:33px;height:33px}.eyebrow{color:var(--muted);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:2px 0 4px;font-size:clamp(1.8rem,4vw,2.65rem);letter-spacing:-.06em;line-height:1.15}.age{color:var(--muted);margin:0 0 12px}.profile-meta{display:flex;gap:8px;flex-wrap:wrap}.pill{font-size:.78rem;padding:6px 10px;background:#ffffffb8;border:1px solid #fff;border-radius:99px;color:#655b66}.hero-side{display:flex;flex-direction:column;justify-content:center;gap:12px}.hero-side label{font-size:.8rem;color:var(--muted);font-weight:750}.profile-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.profile-fields input,.profile-fields select{width:100%;min-width:0}.field, input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 11px;color:var(--ink);width:100%}input[type=file]{padding:8px;font-size:.82rem}input[type=checkbox]{width:auto;accent-color:var(--accent)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 24px}.stat{background:var(--paper);border:1px solid var(--line);padding:18px;border-radius:20px;box-shadow:var(--shadow);display:flex;gap:13px;align-items:center}.stat-icon{width:43px;height:43px;border-radius:15px;background:var(--soft);display:grid;place-items:center;font-size:22px;flex-shrink:0}.stat .label{font-size:.78rem;color:var(--muted);font-weight:700}.stat .value{font-size:1.35rem;font-weight:850;letter-spacing:-.04em}.stat .unit{font-size:.78rem;color:var(--muted);font-weight:600}.tabs{display:flex;gap:7px;overflow:auto;padding:5px;margin-bottom:18px;background:#f3ebef;border-radius:15px}.tab{white-space:nowrap;border:0;border-radius:11px;padding:10px 15px;color:var(--muted);font-weight:750;background:transparent}.tab.active{background:white;color:var(--ink);box-shadow:0 2px 9px #3d24310d}.panel{display:none}.panel.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:17px}.section-head h2{margin:0;font-size:1.45rem;letter-spacing:-.04em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.layout{display:grid;grid-template-columns: minmax(0,1.3fr) minmax(280px,.7fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);min-width:0}.card h3{margin:0 0 14px;font-size:1rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid .full{grid-column:1/-1}.form-grid label,.stack label{display:block;color:var(--muted);font-size:.8rem;font-weight:750;margin-bottom:5px}.stack{display:grid;gap:12px}.help{font-size:.78rem;color:var(--muted);margin:7px 0 0}.chart-wrap{position:relative;height:280px;width:100%}.table-wrap{overflow:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:470px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line)}th{font-size:.75rem;color:var(--muted);font-weight:800}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}.category-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.chip{border:1px solid var(--line);background:#fff;padding:7px 11px;border-radius:99px;font-size:.83rem;font-weight:700}.chip.active{background:var(--soft);border-color:var(--accent);color:var(--ink)}.milestone-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.milestone{display:flex;align-items:flex-start;gap:11px;border:1px solid var(--line);border-radius:15px;padding:13px;background:white}.milestone.done{background:var(--soft);border-color:var(--accent2)}.milestone input{margin-top:4px}.mile-name{font-weight:800}.mile-meta{font-size:.78rem;color:var(--muted);margin-top:2px}.journal-form{margin-bottom:18px}.media-preview{max-width:100%;max-height:240px;object-fit:cover;border-radius:14px;margin-top:9px;display:none}.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.post{overflow:hidden;border-radius:19px;border:1px solid var(--line);background:white;box-shadow:var(--shadow)}.post-img{width:100%;height:190px;object-fit:cover;display:block;background:var(--soft)}.post-body{padding:16px}.post-date{font-size:.76rem;color:var(--muted);font-weight:750}.post h3{margin:4px 0 7px;font-size:1.08rem}.post p{margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere}.post audio{width:100%;margin:5px 0 12px}.post-actions{display:flex;justify-content:flex-end}.recorder{background:var(--soft);padding:13px;border-radius:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rec-time{font-variant-numeric:tabular-nums;font-weight:800}.rec-dot{width:9px;height:9px;border-radius:50%;background:#dc6574;display:inline-block;margin-right:6px}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 0}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3d3540;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:20;display:none;max-width:90vw}.danger{color:#b44c5a!important}.small-note{font-size:.8rem;color:var(--muted)}.hidden{display:none!important}
-.sync-panel{max-width:1180px;margin:0 auto 20px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:18px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}.sync-heading{font-weight:850;font-size:1rem;letter-spacing:-.02em}.sync-info p{margin:4px 0 8px;color:var(--muted);font-size:.82rem}.sync-status{font-size:.82rem;font-weight:750;color:var(--muted);overflow-wrap:anywhere}.sync-status.success{color:#297a57}.sync-status.error{color:#b44c5a}.sync-status.working{color:#896b16}.sync-account{font-size:.8rem;color:var(--muted);margin-top:3px}.sync-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sync-fields input{min-width:0}.sync-buttons{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.sync-buttons .btn{font-size:.82rem;padding:8px 10px}.sync-controls #syncSignedIn .help{margin-top:8px}.sync-panel .hidden{display:none!important}
-@media(max-width:760px){.sync-panel{margin:0 12px 16px;padding:15px;grid-template-columns:1fr;gap:12px}.sync-fields{grid-template-columns:1fr}.sync-buttons .btn{flex:1}.app{padding:14px 12px 42px}.hero{grid-template-columns:1fr;padding:20px;gap:18px}.hero-main{align-items:flex-start}.avatar{width:86px;height:86px;border-radius:25px}.hero-side{border-top:1px solid #ffffff;padding-top:14px}.stats{gap:8px}.stat{padding:12px;display:block}.stat-icon{width:34px;height:34px;font-size:18px;margin-bottom:8px}.stat .value{font-size:1.12rem}.stat .label{font-size:.7rem}.layout{grid-template-columns:1fr}.milestone-list,.feed{grid-template-columns:1fr}.section-head{align-items:center}.section-head .btn{flex-shrink:0}.card{padding:16px}.chart-wrap{height:240px}.topbar{align-items:flex-start}.brand{font-size:1.05rem}.top-actions .btn{padding:8px 10px;font-size:.8rem}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #d982a355;outline-offset:2px}.app{max-width:1180px;margin:auto;padding:22px 18px 60px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;font-size:1.2rem;letter-spacing:-.04em}.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:15px;background:var(--soft);font-size:23px}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:10px 14px;background:var(--accent);color:white;font-weight:750;box-shadow:0 5px 15px #00000008}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.subtle{background:var(--soft);color:var(--ink);box-shadow:none}.btn.small{font-size:.85rem;padding:7px 10px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:22px;padding:28px;border-radius:28px;background:linear-gradient(120deg,var(--soft),#fff 75%);border:1px solid #ffffff;box-shadow:var(--shadow);margin-bottom:22px}.hero-main{display:flex;align-items:center;gap:20px;min-width:0}.avatar-wrap{position:relative;flex-shrink:0}.avatar{width:112px;height:112px;object-fit:cover;border-radius:32px;background:#fff;border:4px solid #ffffff;box-shadow:0 5px 18px #4c263018}.avatar-edit{position:absolute;right:-5px;bottom:-5px;border:2px solid white;background:var(--accent);color:#fff;border-radius:50%;width:33px;height:33px}.eyebrow{color:var(--muted);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.hero h1{margin:2px 0 4px;font-size:clamp(1.8rem,4vw,2.65rem);letter-spacing:-.06em;line-height:1.15}.age{color:var(--muted);margin:0 0 12px}.profile-meta{display:flex;gap:8px;flex-wrap:wrap}.pill{font-size:.78rem;padding:6px 10px;background:#ffffffb8;border:1px solid #fff;border-radius:99px;color:#655b66}.hero-side{display:flex;flex-direction:column;justify-content:center;gap:12px}.hero-side label{font-size:.8rem;color:var(--muted);font-weight:750}.profile-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}.profile-fields input,.profile-fields select{width:100%;min-width:0}.field, input,select,textarea{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 11px;color:var(--ink);width:100%}input[type=file]{padding:8px;font-size:.82rem}input[type=checkbox]{width:auto;accent-color:var(--accent)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 24px}.stat{background:var(--paper);border:1px solid var(--line);padding:18px;border-radius:20px;box-shadow:var(--shadow);display:flex;gap:13px;align-items:center}.stat-icon{width:43px;height:43px;border-radius:15px;background:var(--soft);display:grid;place-items:center;font-size:22px;flex-shrink:0}.stat .label{font-size:.78rem;color:var(--muted);font-weight:700}.stat .value{font-size:1.35rem;font-weight:850;letter-spacing:-.04em}.stat .unit{font-size:.78rem;color:var(--muted);font-weight:600}.tabs{display:flex;gap:7px;overflow:auto;padding:5px;margin-bottom:18px;background:#f3ebef;border-radius:15px}.tab{white-space:nowrap;border:0;border-radius:11px;padding:10px 15px;color:var(--muted);font-weight:750;background:transparent}.tab.active{background:white;color:var(--ink);box-shadow:0 2px 9px #3d24310d}.panel{display:none}.panel.active{display:block}.section-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:17px}.section-head h2{margin:0;font-size:1.45rem;letter-spacing:-.04em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:.9rem}.layout{display:grid;grid-template-columns: minmax(0,1.3fr) minmax(280px,.7fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow);min-width:0}.card h3{margin:0 0 14px;font-size:1rem}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid .full{grid-column:1/-1}.form-grid label,.stack label{display:block;color:var(--muted);font-size:.8rem;font-weight:750;margin-bottom:5px}.stack{display:grid;gap:12px}.help{font-size:.78rem;color:var(--muted);margin:7px 0 0}.chart-wrap{position:relative;height:280px;width:100%}.table-wrap{overflow:auto;margin-top:16px}table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:470px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--line)}th{font-size:.75rem;color:var(--muted);font-weight:800}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:14px}.category-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.chip{border:1px solid var(--line);background:#fff;padding:7px 11px;border-radius:99px;font-size:.83rem;font-weight:700}.chip.active{background:var(--soft);border-color:var(--accent);color:var(--ink)}.milestone-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.milestone{display:flex;align-items:flex-start;gap:11px;border:1px solid var(--line);border-radius:15px;padding:13px;background:white}.milestone.done{background:var(--soft);border-color:var(--accent2)}.milestone input{margin-top:4px}.mile-name{font-weight:800}.mile-meta{font-size:.78rem;color:var(--muted);margin-top:2px}.journal-form{margin-bottom:18px}.media-preview{max-width:100%;max-height:240px;object-fit:cover;border-radius:14px;margin-top:9px;display:none}.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.post{overflow:hidden;border-radius:19px;border:1px solid var(--line);background:white;box-shadow:var(--shadow)}.post-img{width:100%;height:190px;object-fit:cover;display:block;background:var(--soft)}.post-body{padding:16px}.post-date{font-size:.76rem;color:var(--muted);font-weight:750}.post h3{margin:4px 0 7px;font-size:1.08rem}.post p{margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere}.post audio{width:100%;margin:5px 0 12px}.post-actions{display:flex;justify-content:flex-end}.recorder{background:var(--soft);padding:13px;border-radius:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rec-time{font-variant-numeric:tabular-nums;font-weight:800}.rec-dot{width:9px;height:9px;border-radius:50%;background:#dc6574;display:inline-block;margin-right:6px}.waveform-canvas{display:block;width:100%;height:42px;flex-basis:100%;border-radius:9px;background:#ffffff80}.waveform-static{display:flex;align-items:center;gap:2px;height:35px;padding:4px 0;margin:3px 0 8px;overflow:hidden}.waveform-static i{display:block;flex:1;min-width:2px;max-width:4px;border-radius:3px;background:var(--accent);opacity:.78}.footer{text-align:center;color:var(--muted);font-size:.8rem;padding:30px 0 0}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3d3540;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow);z-index:20;display:none;max-width:90vw}.danger{color:#b44c5a!important}.small-note{font-size:.8rem;color:var(--muted)}.hidden{display:none!important}
+.sync-status{font-size:.78rem;font-weight:750;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}.sync-status.success{color:#297a57}.sync-status.error{color:#b44c5a}.sync-status.working{color:#896b16}
+@media(max-width:760px){.sync-status{margin-left:auto;font-size:.73rem;max-width:42vw}.app{padding:14px 12px 42px}.hero{grid-template-columns:1fr;padding:20px;gap:18px}.hero-main{align-items:flex-start}.avatar{width:86px;height:86px;border-radius:25px}.hero-side{border-top:1px solid #ffffff;padding-top:14px}.stats{gap:8px}.stat{padding:12px;display:block}.stat-icon{width:34px;height:34px;font-size:18px;margin-bottom:8px}.stat .value{font-size:1.12rem}.stat .label{font-size:.7rem}.layout{grid-template-columns:1fr}.milestone-list,.feed{grid-template-columns:1fr}.section-head{align-items:center}.section-head .btn{flex-shrink:0}.card{padding:16px}.chart-wrap{height:240px}.topbar{align-items:flex-start}.brand{font-size:1.05rem}.top-actions .btn{padding:8px 10px;font-size:.8rem}}
 @media(max-width:380px){.hero-main{gap:12px}.avatar{width:70px;height:70px}.profile-fields{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat .value{font-size:1rem}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
 
 /* PWA and mobile-first refinements */
@@ -29,7 +29,7 @@ button{min-height:40px}
 input,select,textarea{font-size:16px}
 @media(max-width:760px){
  .app{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
- .topbar{gap:8px;flex-wrap:wrap}
+ .topbar{gap:8px;flex-wrap:wrap}.sync-status{margin-left:auto}
  .top-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
  .top-actions .btn{min-height:42px}
  .tabs{position:fixed;z-index:30;left:10px;right:10px;bottom:calc(8px + env(safe-area-inset-bottom));margin:0;padding:6px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;border:1px solid #eadde4;background:#fffefeeF;box-shadow:0 8px 30px #30202a1c;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:18px}
@@ -44,25 +44,20 @@ input,select,textarea{font-size:16px}
 @media(min-width:761px){.top-actions{align-items:center}}
 @media(display-mode:standalone){.topbar{padding-top:env(safe-area-inset-top)}}
 
+
+/* Clean start: remove the top header shown in the previous version. */
+.topbar{display:none!important}
+.app{padding-top:calc(12px + env(safe-area-inset-top))}
+.install-row{display:flex;justify-content:center;padding-top:8px}
+.more-tools{margin-top:18px;text-align:center;color:var(--muted);font-size:.85rem}
+.more-tools summary{cursor:pointer;display:inline-block;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);font-weight:700;list-style-position:inside}
+.more-tools-actions{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;padding:12px}
+@media(max-width:760px){.app{padding-top:calc(8px + env(safe-area-inset-top))}.more-tools-actions{gap:7px}.more-tools-actions .btn{min-height:42px}}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="topbar"><div class="brand"><div class="logo">🌱</div><div>little days <div style="font-size:.7rem;font-weight:650;letter-spacing:.02em;color:var(--muted)">a little journal for growing up</div></div></div><div class="top-actions"><button class="btn secondary hidden" id="installBtn">＋ Install app</button><button class="btn secondary" id="demoBtn">✨ Demo data</button><button class="btn secondary" id="exportBtn">↓ Backup</button><button class="btn secondary" id="importBtn">↑ Import</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"></div></header>
-<section class="sync-panel" aria-label="Cloud sync">
-  <div class="sync-info">
-    <div class="sync-heading">☁️ Firebase cloud save</div>
-    <p>No sign-in needed. Your app data can sync between devices through one shared Realtime Database record.</p>
-    <div id="syncStatus" class="sync-status" role="status" aria-live="polite">Connecting to Firebase…</div>
-  </div>
-  <div class="sync-controls">
-    <div class="sync-buttons">
-      <button class="btn" id="syncNowBtn" type="button">Save this device to cloud</button>
-      <button class="btn secondary" id="syncRestoreBtn" type="button">Load cloud data</button>
-    </div>
-    <p class="help">This uses public database rules without authentication. Anyone who knows the project/database URL may be able to read, replace, or delete this shared record. Photos and voice recordings are included in the same cloud save when the record fits Firebase's size limit.</p>
-  </div>
-</section>
+<header class="topbar" aria-hidden="true"><div id="syncStatus" class="sync-status" role="status" aria-live="polite" title="Automatic Firebase sync">☁ Connecting…</div></header>
 <section class="hero">
 <div class="hero-main"><div class="avatar-wrap"><img id="avatar" class="avatar" alt="Baby profile picture" src=""><button class="avatar-edit" id="photoBtn" title="Change profile photo">＋</button><input id="profilePhoto" type="file" accept="image/*" class="hidden"></div><div style="min-width:0"><div class="eyebrow">Our little wonder</div><h1 id="babyNameHeading">Your little one</h1><p class="age" id="ageText">Every day is a new adventure ♡</p><div class="profile-meta"><span class="pill" id="birthPill">🎂 Add a birth date</span><span class="pill" id="birthWeightPill">⚖️ Birth weight —</span></div></div></div>
 <div class="hero-side"><label for="themeSelect">MAKE IT YOURS · THEME</label><select id="themeSelect"><option value="pink">🌸 Soft Pink</option><option value="blue">🩵 Baby Blue</option><option value="mint">🌿 Mint Green</option><option value="lavender">💜 Lavender</option><option value="peach">🍑 Warm Peach</option></select><div class="profile-fields"><input id="babyName" placeholder="Baby's name" aria-label="Baby's name"><input id="birthDate" type="date" aria-label="Birth date"><input id="birthWeight" type="number" step=".01" min="0" placeholder="Birth weight (kg)" aria-label="Birth weight kg"><input id="birthHeight" type="number" step=".1" min="0" placeholder="Birth height (cm)" aria-label="Birth height cm"></div><button class="btn small" id="saveProfile">Save baby profile</button></div>
@@ -72,8 +67,10 @@ input,select,textarea{font-size:16px}
 <section class="panel active" id="growth"><div class="section-head"><div><h2>Growing beautifully</h2><p>Every little change is worth remembering.</p></div></div><div class="layout"><div class="card"><h3>Growth over time</h3><div class="chart-wrap"><canvas id="growthChart" aria-label="Baby growth chart"></canvas></div><p class="help">Recorded measurements only; this chart is for personal tracking, not medical assessment.</p><div class="table-wrap"><table><thead><tr><th>Date</th><th>Weight</th><th>Height</th><th>Notes</th><th></th></tr></thead><tbody id="growthRows"></tbody></table></div><div id="growthEmpty" class="empty">Your growth story starts with the first measurement 🌱</div></div>
 <div class="card"><h3>＋ Add a measurement</h3><form id="growthForm" class="stack"><div><label for="growthDate">Date</label><input id="growthDate" type="date" required></div><div><label for="growthWeight">Weight (kg)</label><input id="growthWeight" type="number" min="0" step=".01" placeholder="e.g. 6.45"></div><div><label for="growthHeight">Height (cm)</label><input id="growthHeight" type="number" min="0" step=".1" placeholder="e.g. 62.5"></div><div><label for="growthNotes">Notes (optional)</label><textarea id="growthNotes" rows="3" placeholder="A little note about today…"></textarea></div><button class="btn">Save measurement</button></form></div></div></section>
 <section class="panel" id="milestones"><div class="section-head"><div><h2>Little big moments</h2><p>Celebrate every new thing, at your own pace.</p></div><button class="btn" id="addMilestoneBtn">＋ Add milestone</button></div><div class="category-row" id="categoryFilters"></div><div id="milestoneList" class="milestone-list"></div></section>
-<section class="panel" id="journal"><div class="section-head"><div><h2>Our daily memories</h2><p>Photos, little stories, and the sounds you never want to forget.</p></div></div><div class="card journal-form"><h3>＋ Save a memory</h3><form id="journalForm" class="stack"><div class="form-grid"><div><label for="postTitle">Memory title</label><input id="postTitle" required placeholder="That first giggle…"></div><div><label for="postDate">Date</label><input id="postDate" type="date" required></div><div class="full"><label for="postText">Your memory</label><textarea id="postText" rows="3" placeholder="What made today special?"></textarea></div><div class="full"><label for="postPhoto">Photo (optional)</label><input id="postPhoto" type="file" accept="image/*"><img id="postPreview" class="media-preview" alt="Selected memory preview"></div></div><div><label>Voice memory (optional)</label><div class="recorder"><button class="btn small" type="button" id="recordBtn">🎙 Start recording</button><button class="btn secondary small" type="button" id="stopBtn" disabled>Stop</button><span class="rec-time" id="recTimer">00:00</span><span class="small-note" id="recStatus">Capture a tiny voice or sound.</span></div><audio id="recordPreview" controls class="hidden" style="width:100%;margin-top:10px"></audio></div><button class="btn">Save this memory ♡</button><p class="help">Photos and recordings are saved with the app data and can sync to Firebase with your memories. Large media files can make the cloud record too large.</p></form></div><div id="journalFeed" class="feed"></div><div id="journalEmpty" class="empty">Your first memory is waiting to be written 💛</div></section>
-<footer class="footer">Made with love, for all the little things. ♡<br>Saved locally and synced to a shared Firebase cloud record. Export a backup for extra peace of mind.</footer>
+<section class="panel" id="journal"><div class="section-head"><div><h2>Our daily memories</h2><p>Photos, little stories, and the sounds you never want to forget.</p></div></div><div class="card journal-form"><h3>＋ Save a memory</h3><form id="journalForm" class="stack"><div class="form-grid"><div><label for="postTitle">Memory title</label><input id="postTitle" required placeholder="That first giggle…"></div><div><label for="postDate">Date</label><input id="postDate" type="date" required></div><div class="full"><label for="postText">Your memory</label><textarea id="postText" rows="3" placeholder="What made today special?"></textarea></div><div class="full"><label for="postPhoto">Photo (optional)</label><input id="postPhoto" type="file" accept="image/*"><img id="postPreview" class="media-preview" alt="Selected memory preview"></div></div><div><label>Voice memory (optional)</label><div class="recorder"><button class="btn small" type="button" id="recordBtn">🎙 Start recording</button><button class="btn secondary small" type="button" id="stopBtn" disabled>Stop</button><span class="rec-time" id="recTimer">00:00</span><span class="small-note" id="recStatus">Capture a tiny voice or sound.</span><canvas id="waveformCanvas" class="waveform-canvas" width="640" height="64" aria-label="Live voice waveform"></canvas></div><audio id="recordPreview" controls class="hidden" style="width:100%;margin-top:10px"></audio></div><button class="btn">Save this memory ♡</button><p class="help">Photos and recordings are saved with the app data and can sync to Firebase with your memories. Large media files can make the cloud record too large.</p></form></div><div id="journalFeed" class="feed"></div><div id="journalEmpty" class="empty">Your first memory is waiting to be written 💛</div></section>
+<div class="install-row"><button class="btn secondary hidden" id="installBtn">＋ Install app</button></div>
+<details class="more-tools"><summary>More tools</summary><div class="more-tools-actions"><button class="btn secondary" id="demoBtn">✨ Demo data</button><button class="btn secondary" id="exportBtn">↓ Backup</button><button class="btn secondary" id="importBtn">↑ Import</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"></div></details>
+<footer class="footer">Made with love, for all the little things. ♡<br>Saved on this device and synced automatically when online. Export a backup for extra peace of mind.</footer>
 </div><div class="toast" id="toast" role="status"></div>
 <script>
 (()=>{'use strict';
@@ -86,24 +83,27 @@ const defaultBaby={name:'',birthDate:'',birthWeight:'',birthHeight:'',photo:'',t
 const preset=[
 ['First smile','Social / Emotional'],['Looks at faces','Social / Emotional'],['Recognises familiar people','Social / Emotional'],['Laughs out loud','Social / Emotional'],['Plays peek-a-boo','Social / Emotional'],['Waves goodbye','Social / Emotional'],['Reaches for a toy','Motor Skills'],['Holds head steady','Motor Skills'],['Rolls over','Motor Skills'],['Sits with support','Motor Skills'],['Sitting unassisted','Motor Skills'],['Crawls or moves to explore','Motor Skills'],['Pulls to stand','Motor Skills'],['First steps','Motor Skills'],['Uses pincer grasp','Motor Skills'],['Coos and makes sounds','Language / Communication'],['Turns toward sounds','Language / Communication'],['Babbles','Language / Communication'],['Responds to own name','Language / Communication'],['First word','Language / Communication'],['Says two words together','Language / Communication'],['Looks for hidden objects','Cognitive'],['Explores objects with hands and mouth','Cognitive'],['Finds a toy hidden under a cloth','Cognitive'],['Points to ask for something','Language / Communication']
 ].map(([name,category])=>({id:uid(),name,category,done:false,date:''}));
-let state={profile:{...defaultBaby},growth:[],milestones:preset,journal:[]}, chart=null, currentCategory='All', recorder=null, chunks=[], audioBlob=null, audioData='', recStart=0, recInterval=null, photoData='';
+let state={profile:{...defaultBaby},growth:[],milestones:preset,journal:[]}, chart=null, currentCategory='All', recorder=null, chunks=[], audioBlob=null, audioData='', recStart=0, recInterval=null, photoData='', audioContext=null, analyser=null, waveformFrame=0, waveformPeaks=[], lastWaveSample=0;
 const STORE='littleDaysBabyAppV1';
+const CLIENT_STORE='littleDaysClientIdV1';
+const clientId=(()=>{try{let id=localStorage.getItem(CLIENT_STORE);if(!id){id='device_'+uid()+'_'+uid();localStorage.setItem(CLIENT_STORE,id)}return id}catch(e){return 'device_'+uid()}})();
+state._updatedAt=0;state._writerId=clientId;
 function toast(msg){$('toast').textContent=msg;$('toast').style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').style.display='none',2600)}
-function save(){try{localStorage.setItem(STORE,JSON.stringify(state));if(window.LittleDaysCloud&&typeof window.LittleDaysCloud.scheduleSync==='function')window.LittleDaysCloud.scheduleSync();return true}catch(e){toast('Storage is full. Export a backup and remove some large media.');return false}}
-function load(){try{const raw=localStorage.getItem(STORE);if(raw){const v=JSON.parse(raw);if(v&&v.profile&&Array.isArray(v.growth)&&Array.isArray(v.milestones)&&Array.isArray(v.journal))state=v}}catch(e){console.warn('Could not load saved data',e)}}
+function save(){try{state._updatedAt=Math.max(Date.now(),(Number(state._updatedAt)||0)+1);state._writerId=clientId;localStorage.setItem(STORE,JSON.stringify(state));if(window.LittleDaysCloud&&typeof window.LittleDaysCloud.scheduleSync==='function')window.LittleDaysCloud.scheduleSync();return true}catch(e){toast('Device storage is full. Export a backup and remove some large media.');return false}}
+function load(){try{const raw=localStorage.getItem(STORE);if(raw){const v=JSON.parse(raw);if(v&&v.profile&&Array.isArray(v.growth)&&Array.isArray(v.milestones)&&Array.isArray(v.journal)){state=v;state._updatedAt=Number(v._updatedAt)||0;state._writerId=String(v._writerId||clientId)}}}catch(e){console.warn('Could not load saved data',e)}}
 function dateFmt(d){if(!d)return 'Date not set';const x=new Date(d+'T12:00:00');return isNaN(x)?d:x.toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}
 function ageString(date){if(!date)return 'Every day is a new adventure ♡';const birth=new Date(date+'T12:00:00'),now=new Date();now.setHours(12,0,0,0);if(isNaN(birth)||birth>now)return 'A little wonder on the way? ♡';let y=now.getFullYear()-birth.getFullYear(),m=now.getMonth()-birth.getMonth(),d=now.getDate()-birth.getDate();if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(m<0){y--;m+=12}return `${y?y+' year'+(y===1?'':'s')+', ':''}${m} month${m===1?'':'s'} and ${d} day${d===1?'':'s'} old ♡`}
 function latest(key){return [...state.growth].filter(x=>x[key]!==''&&x[key]!=null&&Number.isFinite(Number(x[key]))).sort((a,b)=>b.date.localeCompare(a.date))[0]}
 function renderProfile(){const p=state.profile;$('babyName').value=p.name||'';$('birthDate').value=p.birthDate||'';$('birthWeight').value=p.birthWeight??'';$('birthHeight').value=p.birthHeight??'';$('themeSelect').value=p.theme||'pink';$('babyNameHeading').textContent=p.name||'Your little one';$('ageText').textContent=ageString(p.birthDate);$('birthPill').textContent='🎂 '+(p.birthDate?dateFmt(p.birthDate):'Add a birth date');$('birthWeightPill').textContent='⚖️ Birth weight '+(p.birthWeight?Number(p.birthWeight).toFixed(2)+' kg':'—');$('avatar').src=p.photo||avatarPlaceholder();const t=themes[p.theme]||themes.pink;document.documentElement.style.setProperty('--accent',t[0]);document.documentElement.style.setProperty('--accent2',t[1]);document.documentElement.style.setProperty('--soft',t[2]);document.querySelector('meta[name="theme-color"]').content=t[1];const w=latest('weight'),h=latest('height');$('latestWeight').innerHTML=(w?Number(w.weight).toFixed(2):'—')+' <span class="unit">kg</span>';$('latestHeight').innerHTML=(h?Number(h.height).toFixed(1):'—')+' <span class="unit">cm</span>';$('milestoneCount').innerHTML=state.milestones.filter(m=>m.done).length+' <span class="unit">moments</span>'}
 function avatarPlaceholder(){return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><rect width="120" height="120" rx="28" fill="#fff"/><text x="60" y="78" font-size="58" text-anchor="middle">👶</text></svg>')}
-function renderGrowth(){const rows=[...state.growth].sort((a,b)=>b.date.localeCompare(a.date));$('growthRows').innerHTML=rows.map(g=>`<tr><td>${escapeHTML(dateFmt(g.date))}</td><td>${g.weight!==''&&g.weight!=null?escapeHTML(Number(g.weight).toFixed(2))+' kg':'—'}</td><td>${g.height!==''&&g.height!=null?escapeHTML(Number(g.height).toFixed(1))+' cm':'—'}</td><td>${escapeHTML(g.notes||'—')}</td><td><button class="btn secondary small" data-delete-growth="${g.id}" aria-label="Delete measurement">Delete</button></td></tr>`).join('');$('growthEmpty').classList.toggle('hidden',rows.length>0);if(chart)chart.destroy();if(typeof Chart==='undefined'){$('growthChart').replaceWith(Object.assign(document.createElement('p'),{textContent:'Chart library could not load. The measurement table is still available.'}));return}const sorted=[...state.growth].sort((a,b)=>a.date.localeCompare(b.date));chart=new Chart($('growthChart'),{type:'line',data:{labels:sorted.map(g=>dateFmt(g.date)),datasets:[{label:'Weight (kg)',data:sorted.map(g=>g.weight===''||g.weight==null?null:Number(g.weight)),borderColor:themes[state.profile.theme]?.[0]||'#d982a3',backgroundColor:(themes[state.profile.theme]?.[1]||'#f4c9d8')+'88',tension:.35,spanGaps:true,yAxisID:'y',pointRadius:4},{label:'Height (cm)',data:sorted.map(g=>g.height===''||g.height==null?null:Number(g.height)),borderColor:'#72a9b7',backgroundColor:'#cce8ed88',tension:.35,spanGaps:true,yAxisID:'y1',pointRadius:4}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:7}},tooltip:{backgroundColor:'#3d3540',padding:12}},scales:{x:{grid:{display:false}},y:{beginAtZero:false,title:{display:true,text:'kg'},grid:{color:'#f0e6eb'}},y1:{position:'right',beginAtZero:false,title:{display:true,text:'cm'},grid:{drawOnChartArea:false}}}}})}
-function renderMilestones(){const cats=['All',...new Set(state.milestones.map(m=>m.category))];$('categoryFilters').innerHTML=cats.map(c=>`<button class="chip ${currentCategory===c?'active':''}" data-cat="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');const list=state.milestones.filter(m=>currentCategory==='All'||m.category===currentCategory).sort((a,b)=>Number(a.done)-Number(b.done)||a.name.localeCompare(b.name));$('milestoneList').innerHTML=list.map(m=>`<div class="milestone ${m.done?'done':''}"><input type="checkbox" data-milestone="${m.id}" ${m.done?'checked':''} aria-label="Mark ${escapeHTML(m.name)} complete"><div style="flex:1;min-width:0"><div class="mile-name">${escapeHTML(m.name)}</div><div class="mile-meta">${escapeHTML(m.category)}${m.done?' · ✨ '+escapeHTML(dateFmt(m.date)):''}</div></div>${m.custom?`<button class="btn secondary small" data-delete-mile="${m.id}" aria-label="Delete milestone">×</button>`:''}</div>`).join('')||'<div class="empty">No milestones in this category yet.</div>';renderProfile()}
-function renderJournal(){const posts=[...state.journal].sort((a,b)=>b.date.localeCompare(a.date)||b.createdAt-a.createdAt);$('journalFeed').innerHTML=posts.map(p=>`<article class="post">${p.photo?`<img class="post-img" src="${p.photo}" alt="Photo for ${escapeHTML(p.title)}" loading="lazy">`:''}<div class="post-body"><div class="post-date">${escapeHTML(dateFmt(p.date))}</div><h3>${escapeHTML(p.title)}</h3>${p.text?`<p>${escapeHTML(p.text)}</p>`:''}${p.audio?`<audio controls preload="none" src="${p.audio}"></audio>`:''}<div class="post-actions"><button class="btn secondary small" data-delete-post="${p.id}">Delete memory</button></div></div></article>`).join('');$('journalEmpty').classList.toggle('hidden',posts.length>0)}
+function renderGrowth(){const rows=[...state.growth].sort((a,b)=>b.date.localeCompare(a.date));$('growthRows').innerHTML=rows.map(g=>`<tr><td>${escapeHTML(dateFmt(g.date))}</td><td>${g.weight!==''&&g.weight!=null?escapeHTML(Number(g.weight).toFixed(2))+' kg':'—'}</td><td>${g.height!==''&&g.height!=null?escapeHTML(Number(g.height).toFixed(1))+' cm':'—'}</td><td>${escapeHTML(g.notes||'—')}</td><td><button class="btn secondary small" data-delete-growth="${escapeHTML(g.id)}" aria-label="Delete measurement">Delete</button></td></tr>`).join('');$('growthEmpty').classList.toggle('hidden',rows.length>0);if(chart)chart.destroy();if(typeof Chart==='undefined'){let notice=$('chartUnavailable');if(!notice){notice=document.createElement('p');notice.id='chartUnavailable';notice.className='help';notice.textContent='Chart library needs an internet connection. Your measurement table is still available.';$('growthChart').parentElement.appendChild(notice)}notice.classList.remove('hidden');return}const oldNotice=$('chartUnavailable');if(oldNotice)oldNotice.classList.add('hidden');const sorted=[...state.growth].sort((a,b)=>a.date.localeCompare(b.date));chart=new Chart($('growthChart'),{type:'line',data:{labels:sorted.map(g=>dateFmt(g.date)),datasets:[{label:'Weight (kg)',data:sorted.map(g=>g.weight===''||g.weight==null?null:Number(g.weight)),borderColor:themes[state.profile.theme]?.[0]||'#d982a3',backgroundColor:(themes[state.profile.theme]?.[1]||'#f4c9d8')+'88',tension:.35,spanGaps:true,yAxisID:'y',pointRadius:4},{label:'Height (cm)',data:sorted.map(g=>g.height===''||g.height==null?null:Number(g.height)),borderColor:'#72a9b7',backgroundColor:'#cce8ed88',tension:.35,spanGaps:true,yAxisID:'y1',pointRadius:4}]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{usePointStyle:true,boxWidth:7}},tooltip:{backgroundColor:'#3d3540',padding:12}},scales:{x:{grid:{display:false}},y:{beginAtZero:false,title:{display:true,text:'kg'},grid:{color:'#f0e6eb'}},y1:{position:'right',beginAtZero:false,title:{display:true,text:'cm'},grid:{drawOnChartArea:false}}}}})}
+function renderMilestones(){const cats=['All',...new Set(state.milestones.map(m=>m.category))];$('categoryFilters').innerHTML=cats.map(c=>`<button class="chip ${currentCategory===c?'active':''}" data-cat="${escapeHTML(c)}">${escapeHTML(c)}</button>`).join('');const list=state.milestones.filter(m=>currentCategory==='All'||m.category===currentCategory).sort((a,b)=>Number(a.done)-Number(b.done)||a.name.localeCompare(b.name));$('milestoneList').innerHTML=list.map(m=>`<div class="milestone ${m.done?'done':''}"><input type="checkbox" data-milestone="${escapeHTML(m.id)}" ${m.done?'checked':''} aria-label="Mark ${escapeHTML(m.name)} complete"><div style="flex:1;min-width:0"><div class="mile-name">${escapeHTML(m.name)}</div><div class="mile-meta">${escapeHTML(m.category)}${m.done?' · ✨ '+escapeHTML(dateFmt(m.date)):''}</div></div>${m.custom?`<button class="btn secondary small" data-delete-mile="${escapeHTML(m.id)}" aria-label="Delete milestone">×</button>`:''}</div>`).join('')||'<div class="empty">No milestones in this category yet.</div>';renderProfile()}
+function renderJournal(){const posts=[...state.journal].sort((a,b)=>b.date.localeCompare(a.date)||b.createdAt-a.createdAt);$('journalFeed').innerHTML=posts.map(p=>`<article class="post">${p.photo?`<img class="post-img" src="${escapeHTML(p.photo)}" alt="Photo for ${escapeHTML(p.title)}" loading="lazy">`:''}<div class="post-body"><div class="post-date">${escapeHTML(dateFmt(p.date))}</div><h3>${escapeHTML(p.title)}</h3>${p.text?`<p>${escapeHTML(p.text)}</p>`:''}${p.audio?`${p.waveform&&p.waveform.length?`<div class="waveform-static" aria-label="Voice recording waveform">${p.waveform.slice(0,180).map(v=>`<i style="height:${Math.max(8,Math.min(100,Math.round(Number(v)*100)))}%"></i>`).join('')}</div>`:''}<audio controls preload="none" src="${escapeHTML(p.audio)}"></audio>`:''}<div class="post-actions"><button class="btn secondary small" data-delete-post="${escapeHTML(p.id)}">Delete memory</button></div></div></article>`).join('');$('journalEmpty').classList.toggle('hidden',posts.length>0)}
 function renderAll(){renderProfile();renderGrowth();renderMilestones();renderJournal()}
 $('saveProfile').addEventListener('click',()=>{state.profile={...state.profile,name:$('babyName').value.trim(),birthDate:$('birthDate').value,birthWeight:$('birthWeight').value,birthHeight:$('birthHeight').value,theme:$('themeSelect').value};if(state.profile.birthDate&&state.profile.birthDate>today()){toast('Birth date cannot be in the future.');return}save();renderProfile();toast('Baby profile saved ♡')});
 $('themeSelect').addEventListener('change',()=>{state.profile.theme=$('themeSelect').value;save();renderAll()});
 $('photoBtn').onclick=()=>$('profilePhoto').click();
-function readImage(file,cb){if(!file)return;if(!file.type.startsWith('image/')){toast('Please choose an image file.');return}if(file.size>4*1024*1024){toast('Please choose an image under 4 MB to help storage.');return}const r=new FileReader();r.onload=()=>cb(r.result);r.readAsDataURL(file)}
+function readImage(file,cb){if(!file)return;if(!file.type.startsWith('image/')){toast('Please choose an image file.');return}if(file.size>12*1024*1024){toast('Please choose an image under 12 MB.');return}const reader=new FileReader();reader.onerror=()=>toast('Could not read that image.');reader.onload=()=>{const img=new Image();img.onerror=()=>toast('That image could not be opened.');img.onload=()=>{const max=1200,scale=Math.min(1,max/Math.max(img.width,img.height)),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*scale));canvas.height=Math.max(1,Math.round(img.height*scale));const ctx=canvas.getContext('2d');ctx.drawImage(img,0,0,canvas.width,canvas.height);cb(canvas.toDataURL('image/jpeg',.82))};img.src=reader.result};reader.readAsDataURL(file)}
 $('profilePhoto').addEventListener('change',e=>readImage(e.target.files[0],data=>{state.profile.photo=data;save();renderProfile();e.target.value='';toast('Profile photo updated')}));document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab));if(b.dataset.tab==='growth'&&chart)chart.resize()}));
 $('growthDate').value=today();$('postDate').value=today();
 $('growthForm').addEventListener('submit',e=>{e.preventDefault();const weight=$('growthWeight').value,height=$('growthHeight').value;if(weight===''&&height===''){toast('Add a weight or height measurement first.');return}state.growth.push({id:uid(),date:$('growthDate').value,weight,height,notes:$('growthNotes').value.trim()});if(save()){e.target.reset();$('growthDate').value=today();renderAll();toast('Measurement saved 🌱')}});
@@ -113,25 +113,30 @@ $('milestoneList').addEventListener('change',e=>{const c=e.target.closest('[data
 $('milestoneList').addEventListener('click',e=>{const b=e.target.closest('[data-delete-mile]');if(!b)return;state.milestones=state.milestones.filter(m=>m.id!==b.dataset.deleteMile);save();renderMilestones()});
 $('addMilestoneBtn').addEventListener('click',()=>{const name=prompt('What little milestone would you like to remember?');if(!name||!name.trim())return;const category=prompt('Category: Motor Skills, Language / Communication, Social / Emotional, or Cognitive','Motor Skills');const allowed=['Motor Skills','Language / Communication','Social / Emotional','Cognitive'];const cat=allowed.find(x=>x.toLowerCase()===String(category||'').trim().toLowerCase());if(!cat){toast('Please enter one of the listed categories.');return}state.milestones.push({id:uid(),name:name.trim(),category:cat,done:false,date:'',custom:true});currentCategory='All';save();renderMilestones();toast('Your milestone was added ♡')});
 $('postPhoto').addEventListener('change',e=>readImage(e.target.files[0],data=>{photoData=data;$('postPreview').src=data;$('postPreview').style.display='block'}));
-$('recordBtn').addEventListener('click',async()=>{if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){toast('Audio recording is not supported in this browser.');return}try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{audioBlob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});const reader=new FileReader();reader.onload=()=>{audioData=reader.result;$('recordPreview').src=audioData;$('recordPreview').classList.remove('hidden');$('recStatus').textContent='Recording ready to save with your memory.'};reader.readAsDataURL(audioBlob);stream.getTracks().forEach(t=>t.stop());$('recordBtn').disabled=false;$('stopBtn').disabled=true;clearInterval(recInterval)};recorder.start();recStart=Date.now();$('recordBtn').disabled=true;$('stopBtn').disabled=false;$('recStatus').textContent='Recording…';recInterval=setInterval(()=>{const s=Math.floor((Date.now()-recStart)/1000);$('recTimer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')},250)}catch(e){toast('Microphone permission was denied or unavailable.')}});$('stopBtn').addEventListener('click',()=>{if(recorder&&recorder.state!=='inactive')recorder.stop();$('recStatus').textContent='Preparing audio…'});
-$('journalForm').addEventListener('submit',e=>{e.preventDefault();const post={id:uid(),title:$('postTitle').value.trim(),date:$('postDate').value,text:$('postText').value.trim(),photo:photoData,audio:audioData,createdAt:Date.now()};state.journal.push(post);if(save()){e.target.reset();$('postDate').value=today();photoData='';audioData='';audioBlob=null;$('postPreview').style.display='none';$('recordPreview').classList.add('hidden');$('recTimer').textContent='00:00';$('recStatus').textContent='Capture a tiny voice or sound.';renderJournal();toast('A new memory saved ♡')}});
+function paintWaveform(peaks){const canvas=$('waveformCanvas');if(!canvas)return;const ctx=canvas.getContext('2d'),w=canvas.width,h=canvas.height;ctx.clearRect(0,0,w,h);ctx.strokeStyle=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()||'#d982a3';ctx.lineWidth=4;ctx.lineCap='round';const shown=peaks.length?peaks:[.07,.12,.08,.18,.1,.06,.14,.08],step=w/shown.length;shown.forEach((v,i)=>{const amp=Math.max(3,Math.min(h*.46,Number(v)*h*.46));ctx.beginPath();ctx.moveTo(i*step+step/2,h/2-amp);ctx.lineTo(i*step+step/2,h/2+amp);ctx.stroke()})}
+function stopWaveform(){cancelAnimationFrame(waveformFrame);waveformFrame=0;if(audioContext){audioContext.close().catch(()=>{});audioContext=null}analyser=null}
+function beginWaveform(stream){const AudioCtx=window.AudioContext||window.webkitAudioContext;if(!AudioCtx){paintWaveform(waveformPeaks);return}try{audioContext=new AudioCtx();analyser=audioContext.createAnalyser();analyser.fftSize=256;const src=audioContext.createMediaStreamSource(stream);src.connect(analyser);const data=new Uint8Array(analyser.fftSize);const tick=()=>{if(!analyser||!recorder||recorder.state!=='recording')return;analyser.getByteTimeDomainData(data);let sum=0;for(let i=0;i<data.length;i++){const n=(data[i]-128)/128;sum+=n*n}const rms=Math.sqrt(sum/data.length);if(Date.now()-lastWaveSample>90){waveformPeaks.push(Math.min(1,Math.max(.04,rms*3.5)));if(waveformPeaks.length>220)waveformPeaks=waveformPeaks.filter((_,i)=>i%2===0);lastWaveSample=Date.now();paintWaveform(waveformPeaks)}waveformFrame=requestAnimationFrame(tick)};audioContext.resume().catch(()=>{});tick()}catch(e){console.warn('Waveform unavailable',e)}}
+$('recordBtn').addEventListener('click',async()=>{if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){toast('Audio recording is not supported in this browser.');return}try{const stream=await navigator.mediaDevices.getUserMedia({audio:true});chunks=[];waveformPeaks=[];lastWaveSample=0;paintWaveform(waveformPeaks);recorder=new MediaRecorder(stream);recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};recorder.onstop=()=>{stopWaveform();audioBlob=new Blob(chunks,{type:recorder.mimeType||'audio/webm'});const reader=new FileReader();reader.onload=()=>{audioData=reader.result;$('recordPreview').src=audioData;$('recordPreview').classList.remove('hidden');$('recStatus').textContent='Recording ready to save with your memory.';paintWaveform(waveformPeaks)};reader.onerror=()=>toast('Could not prepare the voice recording.');reader.readAsDataURL(audioBlob);stream.getTracks().forEach(t=>t.stop());$('recordBtn').disabled=false;$('stopBtn').disabled=true;clearInterval(recInterval)};recorder.start();beginWaveform(stream);recStart=Date.now();$('recordBtn').disabled=true;$('stopBtn').disabled=false;$('recStatus').textContent='Recording…';recInterval=setInterval(()=>{const s=Math.floor((Date.now()-recStart)/1000);$('recTimer').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')},250)}catch(e){toast('Microphone permission was denied or unavailable.')}});$('stopBtn').addEventListener('click',()=>{if(recorder&&recorder.state!=='inactive')recorder.stop();$('recStatus').textContent='Preparing audio…'});
+$('journalForm').addEventListener('submit',e=>{e.preventDefault();const post={id:uid(),title:$('postTitle').value.trim(),date:$('postDate').value,text:$('postText').value.trim(),photo:photoData,audio:audioData,waveform:[...waveformPeaks],createdAt:Date.now()};state.journal.push(post);if(save()){e.target.reset();$('postDate').value=today();photoData='';audioData='';audioBlob=null;waveformPeaks=[];paintWaveform(waveformPeaks);$('postPreview').style.display='none';$('recordPreview').classList.add('hidden');$('recTimer').textContent='00:00';$('recStatus').textContent='Capture a tiny voice or sound.';renderJournal();toast('A new memory saved ♡')}});
 $('journalFeed').addEventListener('click',e=>{const b=e.target.closest('[data-delete-post]');if(!b)return;state.journal=state.journal.filter(p=>p.id!==b.dataset.deletePost);save();renderJournal();toast('Memory deleted')});
-$('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({...state,exportedAt:new Date().toISOString(),app:'Little Days'},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='little-days-backup-'+today()+'.json';a.click();URL.revokeObjectURL(url);toast('Backup exported')});
+$('exportBtn').addEventListener('click',()=>{const blob=new Blob([JSON.stringify({...state,exportedAt:new Date().toISOString(),app:'Little Days'},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='little-days-backup-'+today()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Backup exported')});
 $('importBtn').onclick=()=>$('importFile').click();$('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const v=JSON.parse(reader.result);if(!v.profile||!Array.isArray(v.growth)||!Array.isArray(v.milestones)||!Array.isArray(v.journal))throw Error('Invalid backup');if(!confirm('Import this backup and replace the data currently in this browser? Export your current data first if you want to keep it.'))return;state={profile:{...defaultBaby,...v.profile},growth:v.growth,milestones:v.milestones,journal:v.journal};save();renderAll();toast('Backup imported successfully')}catch(err){toast('That file does not look like a Little Days backup.')}};reader.readAsText(file);e.target.value=''});
 $('demoBtn').addEventListener('click',()=>{if(!confirm('Load demo data? This replaces the current Little Days data in this browser. Export a backup first if needed.'))return;const babyBirth=new Date();babyBirth.setMonth(babyBirth.getMonth()-7);babyBirth.setDate(12);const ds=d=>d.toLocaleDateString('en-CA');const base=new Date(babyBirth);state={profile:{...defaultBaby,name:'Avery',birthDate:ds(babyBirth),birthWeight:'3.25',birthHeight:'50.2',theme:'mint'},growth:[{id:uid(),date:ds(base),weight:'3.25',height:'50.2',notes:'Welcome to the world 💚'},{id:uid(),date:ds(new Date(base.getTime()+55*86400000)),weight:'5.1',height:'57.8',notes:'Growing so fast'},{id:uid(),date:ds(new Date(base.getTime()+115*86400000)),weight:'6.3',height:'62.4',notes:'Little toes, big discoveries'},{id:uid(),date:ds(new Date(base.getTime()+190*86400000)),weight:'7.4',height:'67.1',notes:'Sitting up with a little help'}],milestones:preset.map((m,i)=>({...m,done:[0,1,6,7,15,16].includes(i),date:[0,1,6,7,15,16].includes(i)?ds(new Date(base.getTime()+(i+1)*12000000)):'',custom:false})),journal:[{id:uid(),title:'The sweetest little smile',date:ds(new Date(base.getTime()+20*86400000)),text:'That tiny smile made the whole day brighter. I wish I could bottle this feeling. ♡',photo:'',audio:'',createdAt:Date.now()}]};save();renderAll();toast('Demo data is ready to explore!')});
-load();$('growthDate').value=today();$('postDate').value=today();renderAll();
+load();$('growthDate').value=today();$('postDate').value=today();renderAll();setInterval(()=>$('ageText').textContent=ageString(state.profile.birthDate),60*1000);
 window.LittleDaysApp={
   exportState:()=>JSON.parse(JSON.stringify(state)),
-  hasLocalData:()=>Boolean(state.profile.name||state.profile.birthDate||state.growth.length||state.journal.length||state.milestones.some(m=>m.done||m.custom)),
-  applyCloudState:(v)=>{if(!v||!v.profile||!Array.isArray(v.growth)||!Array.isArray(v.milestones)||!Array.isArray(v.journal))throw new Error('The cloud backup has an unexpected format.');state={profile:{...defaultBaby,...v.profile},growth:v.growth,milestones:v.milestones,journal:v.journal};localStorage.setItem(STORE,JSON.stringify(state));renderAll();},
-  getDefaultState:()=>({profile:{...defaultBaby},growth:[],milestones:preset.map(m=>({...m,done:false,date:''})),journal:[]})
+  hasLocalData:()=>Boolean(state.profile.name||state.profile.birthDate||state.profile.birthWeight||state.profile.birthHeight||state.profile.photo||state.growth.length||state.journal.length||state.milestones.some(m=>m.done||m.custom)),
+  applyCloudState:(v)=>{if(!v||!v.profile||!Array.isArray(v.growth)||!Array.isArray(v.milestones)||!Array.isArray(v.journal))throw new Error('The cloud record has an unexpected format.');state={profile:{...defaultBaby,...v.profile},growth:v.growth,milestones:v.milestones,journal:v.journal,_updatedAt:Number(v._cloudUpdatedAt||v._updatedAt)||Date.now(),_writerId:String(v._cloudWriter||v._writerId||clientId)};localStorage.setItem(STORE,JSON.stringify(state));renderAll();},
+  touchLocal:()=>{state._updatedAt=Math.max(Date.now(),(Number(state._updatedAt)||0)+1);state._writerId=clientId;localStorage.setItem(STORE,JSON.stringify(state));},
+  getClientId:()=>clientId,
+  getDefaultState:()=>({profile:{...defaultBaby},growth:[],milestones:preset.map(m=>({...m,done:false,date:''})),journal:[],_updatedAt:0,_writerId:clientId})
 };
 })();
 </script>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getDatabase, ref as dbRef, get, set } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+import { getDatabase, ref as dbRef, get, set, onValue } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBDKBRoYaloQSnuWxCwVCdl4BwW7SAfVrk",
@@ -146,120 +151,203 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-// All installations use one shared record. No Firebase Authentication is used.
 const STATE_PATH = "littleDaysBabyTracker/state";
+const stateRef = dbRef(database, STATE_PATH);
 const MAX_RECORD_BYTES = 8 * 1024 * 1024;
-let cloudReadyForAutoSync = false;
+const $ = id => document.getElementById(id);
+let cloudReady = false;
+let firstSnapshot = true;
 let syncTimer = null;
 let syncChain = Promise.resolve();
-const $ = id => document.getElementById(id);
+let applyingCloud = false;
+let firebaseConnected = false;
+const clientId = window.LittleDaysApp?.getClientId?.() || ('device_' + Math.random().toString(36).slice(2));
 
 function status(message, kind = "") {
   const el = $("syncStatus");
   if (!el) return;
   el.textContent = message;
   el.className = "sync-status" + (kind ? " " + kind : "");
+  el.title = message;
 }
 function validState(s) {
   return Boolean(s && s.profile && Array.isArray(s.growth) && Array.isArray(s.milestones) && Array.isArray(s.journal));
 }
 function meaningful(s) {
-  return Boolean(s && s.profile && (s.profile.name || s.profile.birthDate || (s.growth || []).length || (s.journal || []).length || (s.milestones || []).some(m => m.done || m.custom)));
+  return Boolean(s && s.profile && (s.profile.name || s.profile.birthDate || s.profile.birthWeight || s.profile.birthHeight || s.profile.photo || (s.growth || []).length || (s.journal || []).length || (s.milestones || []).some(m => m.done || m.custom)));
+}
+function stamp(s) {
+  return Number(s?._cloudUpdatedAt || s?._updatedAt || 0) || 0;
+}
+function writer(s) {
+  return String(s?._cloudWriter || s?._writerId || "");
+}
+function signature(s) {
+  return JSON.stringify({ profile: s?.profile || {}, growth: s?.growth || [], milestones: s?.milestones || [], journal: s?.journal || [] });
 }
 function friendlyError(error) {
   const message = String(error?.message || error || "");
-  if (/PERMISSION_DENIED|permission_denied/i.test(message)) {
-    return "Firebase denied access. Add the public littleDaysBabyTracker rules shown in README.md.";
-  }
-  if (/network|fetch/i.test(message)) return "Could not connect to Firebase. Check your internet and database URL.";
-  return message || "Cloud save failed. Your local data is still available on this device.";
+  if (/PERMISSION_DENIED|permission_denied/i.test(message)) return "Cloud rules need updating";
+  if (/network|fetch|disconnect|offline/i.test(message)) return "Offline · saved on this device";
+  if (/8 MB|8388608/i.test(message)) return "Cloud limit reached · reduce media";
+  return "Cloud sync unavailable · local data kept";
 }
 function scheduleSync() {
-  if (!cloudReadyForAutoSync) return;
+  if (!cloudReady || applyingCloud) return;
   clearTimeout(syncTimer);
-  syncTimer = setTimeout(() => syncNow().catch(err => status("Cloud save failed: " + friendlyError(err), "error")), 1000);
+  if (!navigator.onLine || !firebaseConnected) {
+    status("Offline · saved on this device", "working");
+    return;
+  }
+  syncTimer = setTimeout(() => syncNow().catch(error => status(friendlyError(error), "error")), 850);
 }
 async function syncNow() {
-  if (!window.LittleDaysApp) throw new Error("The app is still starting. Please try again.");
-  const payload = window.LittleDaysApp.exportState();
-  const bytes = new TextEncoder().encode(JSON.stringify(payload)).length;
-  if (bytes > MAX_RECORD_BYTES) {
-    throw new Error("This app record is over 8 MB. Remove some large photos or audio clips, then try again. Local data is unchanged.");
-  }
-  status("Saving to Firebase…", "working");
   const work = async () => {
-    await set(dbRef(database, STATE_PATH), { ...payload, _cloudUpdatedAt: Date.now(), _app: "Little Days" });
-    cloudReadyForAutoSync = true;
-    status("Saved to Firebase · " + new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }), "success");
-    return true;
+    if (!window.LittleDaysApp) throw new Error("App is not ready");
+    const current = window.LittleDaysApp.exportState();
+    const payloadBytes = new TextEncoder().encode(JSON.stringify(current)).length;
+    if (payloadBytes > MAX_RECORD_BYTES) throw new Error("8 MB record limit");
+    const updated = Number(current._updatedAt) || Date.now();
+    const document = {
+      ...current,
+      _cloudUpdatedAt: updated,
+      _cloudWriter: current._writerId || clientId,
+      _app: "Little Days",
+      _schemaVersion: 1
+    };
+    status("Syncing…", "working");
+    await set(stateRef, document);
+    status("Synced", "success");
   };
-  syncChain = syncChain.then(work, work);
-  return syncChain;
+  const task = syncChain.then(work, work);
+  syncChain = task.catch(() => {});
+  return task;
 }
-async function loadCloud(confirmReplace = true) {
-  status("Loading cloud data…", "working");
-  const snapshot = await get(dbRef(database, STATE_PATH));
-  const remote = snapshot.val();
-  if (!validState(remote)) {
-    status("No valid cloud record found yet. Save this device to create one.", "working");
-    return false;
-  }
-  if (confirmReplace && meaningful(window.LittleDaysApp.exportState()) && !confirm("Load the cloud copy and replace the data currently on this device? Export a backup first if you want to keep it.")) {
-    status("Kept this device's data. Nothing was changed.");
-    return false;
-  }
+function applyRemote(remote) {
+  applyingCloud = true;
+  clearTimeout(syncTimer);
   window.LittleDaysApp.applyCloudState(remote);
-  cloudReadyForAutoSync = true;
-  status("Cloud data loaded onto this device.", "success");
-  return true;
+  applyingCloud = false;
+  status("Updated from cloud", "success");
 }
-
-$("syncNowBtn").addEventListener("click", async () => {
-  try {
-    const snapshot = await get(dbRef(database, STATE_PATH));
-    if (snapshot.exists() && !confirm("Replace the shared cloud record with the data currently on this device? This affects every device using this app.")) return;
-    cloudReadyForAutoSync = true;
-    await syncNow();
-  } catch (error) {
-    status("Cloud save failed: " + friendlyError(error), "error");
-  }
-});
-$("syncRestoreBtn").addEventListener("click", async () => {
-  try { await loadCloud(true); }
-  catch (error) { status("Could not load cloud data: " + friendlyError(error), "error"); }
-});
-
-async function initializeCloud() {
-  try {
-    status("Connecting to Firebase…", "working");
-    const snapshot = await get(dbRef(database, STATE_PATH));
-    const remote = snapshot.val();
-    const local = window.LittleDaysApp.exportState();
-    if (snapshot.exists()) {
-      if (!validState(remote)) {
-        cloudReadyForAutoSync = false;
-        status("A cloud record exists but its format is not recognised. Use Save to replace it or check README.md.", "error");
-      } else if (!meaningful(local)) {
-        window.LittleDaysApp.applyCloudState(remote);
-        cloudReadyForAutoSync = true;
-        status("Cloud data restored to this device.", "success");
-      } else {
-        cloudReadyForAutoSync = false;
-        status("Cloud data found. Choose Load cloud data or Save this device to cloud.", "working");
-      }
+async function resolveInitial(remote) {
+  const local = window.LittleDaysApp.exportState();
+  if (remote === null || remote === undefined) {
+    cloudReady = true;
+    if (meaningful(local)) {
+      if (!stamp(local)) window.LittleDaysApp.touchLocal();
+      await syncNow();
     } else {
-      cloudReadyForAutoSync = true;
-      if (meaningful(local)) await syncNow();
-      else status("Connected · new cloud record will be created when you save data.", "success");
+      status("Cloud sync ready", "success");
     }
-  } catch (error) {
-    cloudReadyForAutoSync = false;
-    status("Firebase unavailable · local data still works. " + friendlyError(error), "error");
+    return;
   }
+  if (!validState(remote)) {
+    cloudReady = false;
+    status("Cloud data format not recognised", "error");
+    return;
+  }
+  const localHasData = meaningful(local);
+  const remoteHasData = meaningful(remote);
+  if (remoteHasData && !localHasData) {
+    applyRemote(remote);
+    cloudReady = true;
+    return;
+  }
+  if (localHasData && !remoteHasData) {
+    cloudReady = true;
+    if (!stamp(local)) window.LittleDaysApp.touchLocal();
+    await syncNow();
+    return;
+  }
+  const localStamp = stamp(local);
+  const remoteStamp = stamp(remote);
+  if (remoteStamp > localStamp) {
+    applyRemote(remote);
+  } else if (localStamp > remoteStamp) {
+    cloudReady = true;
+    await syncNow();
+    return;
+  } else if (signature(local) === signature(remote)) {
+    status("Synced", "success");
+  } else if (writer(remote) >= writer(local)) {
+    applyRemote(remote);
+  } else {
+    cloudReady = true;
+    await syncNow();
+    return;
+  }
+  cloudReady = true;
 }
 
-window.LittleDaysCloud = { scheduleSync, syncNow, loadCloud };
-initializeCloud();
+// Realtime listeners update other devices automatically and also detect reconnection.
+async function reconcileRemote(remote) {
+  if (remote === null || remote === undefined) {
+    const local = window.LittleDaysApp.exportState();
+    if (cloudReady && meaningful(local)) {
+      if (!stamp(local)) window.LittleDaysApp.touchLocal();
+      scheduleSync();
+    } else if (cloudReady) {
+      status("Cloud sync ready", "success");
+    }
+    return;
+  }
+  if (!validState(remote)) {
+    status("Cloud data format not recognised", "error");
+    return;
+  }
+  const local = window.LittleDaysApp.exportState();
+  const localStamp = stamp(local);
+  const remoteStamp = stamp(remote);
+  if (remoteStamp > localStamp) {
+    applyRemote(remote);
+  } else if (localStamp > remoteStamp) {
+    scheduleSync();
+  } else if (signature(local) === signature(remote)) {
+    status("Synced", "success");
+  } else if (writer(remote) >= writer(local)) {
+    applyRemote(remote);
+  } else {
+    scheduleSync();
+  }
+}
+async function reconcileAfterReconnect() {
+  if (!cloudReady || !firebaseConnected) return;
+  try {
+    const snapshot = await get(stateRef);
+    await reconcileRemote(snapshot.exists() ? snapshot.val() : null);
+  } catch (error) {
+    status(friendlyError(error), "error");
+  }
+}
+onValue(stateRef, async snapshot => {
+  const remote = snapshot.exists() ? snapshot.val() : null;
+  if (firstSnapshot) {
+    firstSnapshot = false;
+    try { await resolveInitial(remote); }
+    catch (error) { cloudReady = true; status(friendlyError(error), "error"); }
+    return;
+  }
+  await reconcileRemote(remote);
+}, error => {
+  cloudReady = false;
+  status(friendlyError(error), "error");
+});
+
+onValue(dbRef(database, ".info/connected"), snapshot => {
+  const connected = snapshot.val() === true;
+  const wasConnected = firebaseConnected;
+  firebaseConnected = connected;
+  if (!connected) {
+    if (!firstSnapshot) status("Offline · saved on this device", "working");
+  } else if (cloudReady) {
+    if (!firstSnapshot) status("Cloud connected", "success");
+    if (!wasConnected) reconcileAfterReconnect();
+  }
+});
+window.addEventListener("online", () => { if (cloudReady) reconcileAfterReconnect(); });
+window.addEventListener("offline", () => status("Offline · saved on this device", "working"));
+window.LittleDaysCloud = { scheduleSync };
 </script>
 
 <script>
@@ -269,15 +357,22 @@ initializeCloud();
   const isStandalone = () =>
     window.matchMedia('(display-mode: standalone)').matches ||
     window.navigator.standalone === true;
-  if (isStandalone) {
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  if (isStandalone()) {
     document.body.classList.add('is-installed');
     if (installBtn) installBtn.classList.add('hidden');
+  } else if (installBtn && isIOS) {
+    installBtn.classList.remove('hidden');
   }
+
   window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     deferredPrompt = event;
     if (installBtn && !isStandalone()) installBtn.classList.remove('hidden');
   });
+
   if (installBtn) {
     installBtn.addEventListener('click', async () => {
       if (deferredPrompt) {
@@ -290,6 +385,7 @@ initializeCloud();
       }
     });
   }
+
   if ('serviceWorker' in navigator && location.protocol !== 'file:') {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js').catch((err) => {
