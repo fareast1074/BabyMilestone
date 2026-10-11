@@ -1,0 +1,37 @@
+{
+  "id": "./",
+  "name": "Little Days \u2014 Baby Tracker",
+  "short_name": "Little Days",
+  "description": "A gentle baby growth tracker, milestone checklist, and daily memory journal.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fbf6f8",
+  "theme_color": "#f4c9d8",
+  "categories": [
+    "lifestyle",
+    "health",
+    "family"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
